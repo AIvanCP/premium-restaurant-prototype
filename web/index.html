@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->  <base href="$FLUTTER_BASE_HREF">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Premium food and beverage brand targeting upscale customers aged 18-24. Experience luxury dining at Elegant Cuisine.">
+  <meta name="keywords" content="luxury dining, upscale restaurant, premium food, elegant cuisine, fine dining">
+  <meta name="author" content="Elegant Cuisine">
+  
+  <!-- Open Graph meta tags for social media sharing -->
+  <meta property="og:title" content="Elegant Cuisine - Premium Dining Experience">
+  <meta property="og:description" content="Premium food and beverage brand targeting upscale customers aged 18-24. Experience luxury dining at Elegant Cuisine.">
+  <meta property="og:image" content="icons/Icon-512.png">
+  <meta property="og:url" content="https://elegantcuisine.com">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card meta tags for Twitter sharing -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Elegant Cuisine - Premium Dining Experience">
+  <meta name="twitter:description" content="Premium food and beverage brand targeting upscale customers aged 18-24. Experience luxury dining at Elegant Cuisine.">
+  <meta name="twitter:image" content="icons/Icon-512.png">
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Elegant Cuisine">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>Elegant Cuisine</title>
+  <link rel="manifest" href="manifest.json">  <script>
+    // The value below is injected by flutter build, do not touch.
+    const serviceWorkerVersion = "{{flutter_service_worker_version}}";
+  </script>
+  <!-- This script adds the flutter initialization JS code -->
+  <script src="flutter.js" defer></script>
+  
+  <style>
+    body {
+      background-color: #1E1E2C;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    
+    .loading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+    
+    .loader {
+      border: 5px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      border-top: 5px solid #D4AF37;
+      width: 50px;
+      height: 50px;
+      animation: spin 1.5s linear infinite;
+      margin-bottom: 20px;
+    }
+    
+    .logo {
+      font-family: 'Helvetica', 'Arial', sans-serif;
+      font-size: 24px;
+      color: #D4AF37;
+      font-weight: bold;
+      margin-bottom: 8px;
+      letter-spacing: 1.5px;
+    }
+    
+    .tagline {
+      font-family: 'Helvetica', 'Arial', sans-serif;
+      font-size: 14px;
+      color: #a0a0a0;
+      margin-top: 8px;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>  <div id="loading" class="loading">
+    <div class="loader"></div>
+    <div class="logo">ELEGANT CUISINE</div>
+    <div class="tagline">THE LEGEND IS BACK!</div>
+  </div>
+  
+  <script>
+    window.addEventListener('load', function(ev) {
+      // Detect if we have the flutter initialize function
+      _flutter = {};
+      var loading = document.querySelector('#loading');
+      
+      // Download main.dart.js
+      var scriptTag = document.createElement('script');
+      scriptTag.src = 'main.dart.js';
+      scriptTag.type = 'application/javascript';
+      
+      // Hide the loading indicator once the app is initialized
+      scriptTag.addEventListener('load', function() {
+        if (loading) {
+          loading.remove();
+        }
+      });
+      
+      document.body.appendChild(scriptTag);
+    });
+  </script>
+</body>
+</html>
